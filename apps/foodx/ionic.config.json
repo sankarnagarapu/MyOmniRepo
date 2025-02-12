@@ -1,0 +1,7 @@
+{
+  "name": "foodx",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
