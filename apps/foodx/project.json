@@ -1,5 +1,5 @@
 {
-  "name": "foodx",
+  "name": "FoodX",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
@@ -68,23 +68,18 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "foodx:build:production"
+          "buildTarget": "FoodX:build:production"
         },
         "development": {
-          "buildTarget": "foodx:build:development"
+          "buildTarget": "FoodX:build:development"
         }
       },
-      "defaultConfiguration": "development",
-      "options": {
-        "port": 8100,
-        "host": "0.0.0.0",
-        "hmr": false
-      }
+      "defaultConfiguration": "development"
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "foodx:build"
+        "buildTarget": "FoodX:build"
       }
     },
     "lint": {
@@ -100,7 +95,7 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "foodx:build",
+        "buildTarget": "FoodX:build",
         "staticFilePath": "dist/apps/foodx/browser",
         "spa": true
       }

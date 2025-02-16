@@ -2,12 +2,11 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
-  appName: 'foodx',
+  appName: 'FoodX',
   webDir: '../../dist/apps/foodx/browser',
+  bundledWebRuntime: false,
   server: {
     androidScheme: 'https',
-    url: 'http://192.168.94.124:8100/',
-    cleartext: true,
   },
 };
 
