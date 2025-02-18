@@ -1,0 +1,7 @@
+{
+  "name": "user-presence",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

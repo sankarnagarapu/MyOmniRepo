@@ -1,0 +1,48 @@
+<router-outlet></router-outlet>
+
+<p>{{ count }}</p>
+<p>{{ doubleCount }}</p>
+
+<button (click)="increment()" class="bg-blue-500 text-white p-2 rounded">
+  Increment
+</button>
+
+<p>{{ sCount() }}</p>
+<p>{{ sDoubleCount() }}</p>
+
+<button (click)="incrementSignal()" class="bg-blue-500 text-white p-2 rounded">
+  Increment Signal
+</button>
+
+<p
+  [class.active]="selectedPage() === 'Home'"
+  tabindex="0"
+  (click)="selectedPage.set('Home')"
+  (keydown)="selectedPage.set('Home')"
+>
+  Home
+</p>
+<p
+  [class.active]="selectedPage() === 'About'"
+  tabindex="1"
+  (click)="selectedPage.set('About')"
+  (keydown)="selectedPage.set('About')"
+>
+  About
+</p>
+<p
+  [class.active]="selectedPage() === 'Contact'"
+  tabindex="2"
+  (click)="selectedPage.set('Contact')"
+  (keydown)="selectedPage.set('Contact')"
+>
+  Contact
+</p>
+
+@if (selectedPage() === 'Home') {
+<p>Home</p>
+} @else if (selectedPage() === 'About') {
+<p>About</p>
+} @else {
+<p>Contact</p>
+}

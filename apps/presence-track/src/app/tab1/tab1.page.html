@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Tab 1 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-button expand="block" size="large" (click)="login()" fill="outline">
+      @if(loginLoading()){
+      <ion-spinner></ion-spinner>
+      }@else { Login }
+    </ion-button>
+    <ion-button
+      expand="block"
+      size="large"
+      (click)="logout()"
+      fill="outline"
+      class="mt-8"
+    >
+      @if(logoutLoading()){
+      <ion-spinner></ion-spinner>
+      }@else { Logout }
+    </ion-button>
+
+    <!-- @for (status of statuses(); track status.id) {
+    <ion-item>
+      {{ status.uid }} - {{ status.status }} - {{ status.timestamp | date :
+      'dd/MM/yyyy HH:mm:ss' }}
+    </ion-item>
+    } -->
+
+    <ion-label
+      class="block text-center font-bold text-2xl capitalize mt-8"
+      [class]="{
+      'text-green-500': status()?.status === 'online',
+      'text-red-500': status()?.status === 'offline'
+    }"
+    >
+      {{status()?.status}}
+      <span class="text-xl font-semibold block mt-2 text-gray-700">
+        {{ status()?.timestamp | date : 'dd/MM/yyyy HH:mm:ss' }}
+      </span>
+    </ion-label>
+
+    <ion-label class="block text-center font-bold text-2xl capitalize mt-8">
+      @if(isUserLoggedIn()){ User logged in here }@else { User is not logged in
+      }
+    </ion-label>
+  </ion-list>
+</ion-content>

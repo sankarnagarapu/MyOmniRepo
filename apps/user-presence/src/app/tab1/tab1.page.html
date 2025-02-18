@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Tab 1 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-button
+      expand="block"
+      (click)="login()"
+      [fill]="user() ? 'oultine' : 'solid'"
+      >Login</ion-button
+    >
+    <ion-button
+      expand="block"
+      (click)="logout()"
+      [fill]="user() ? 'solid' : 'oultine'"
+      >Logout</ion-button
+    >
+    <ion-label class="block font-semibold text-green-500 p-4">
+      {{ status()?.status }} - {{ status()?.timestamp | date : 'dd/MM/yyyy
+      HH:mm:ss' }}
+    </ion-label>
+    <ion-button fill="outline" expand="block"> Click Me </ion-button>
+  </ion-list>
+</ion-content>

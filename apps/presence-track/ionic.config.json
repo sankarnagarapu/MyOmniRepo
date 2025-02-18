@@ -1,0 +1,7 @@
+{
+  "name": "presence-track",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
